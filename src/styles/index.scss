@@ -1,0 +1,18 @@
+//import ant design css
+@import "~antd/dist/antd.css";
+@import "~antd/dist/antd.min.css";
+
+//import colors
+@import "./common/colors";
+
+//import variables
+@import "./common/variables";
+
+//import fonts
+@import "./common/fonts";
+
+//import base scss
+@import "./base/base";
+
+@import "../components/usersList/style.scss";
+@import "../components/userDetail/style.scss";

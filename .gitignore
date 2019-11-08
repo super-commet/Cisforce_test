@@ -1,0 +1,18 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+
+# coverage
+coverage
+
+dist
+.vscode
+.terraform/plugins
+terraform.*
+
+# Intellij
+/.idea

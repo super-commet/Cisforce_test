@@ -1,0 +1,11 @@
+html, body, #root {
+  font-family: $font-family-base !important;
+}
+
+#root {
+  height: 100vh;
+}
+
+.app {
+  height: 100%;
+}
