@@ -37,6 +37,15 @@ const reducer = (state = initialState, action) => {
       newState.currentPageNum = action.payload
       return newState
 
+    case ActionTypes.SUCCESS_GET_USER_DETAIL:
+      newState.selectedUser = action.payload
+      newState.isLoading = false
+      return newState
+
+    case ActionTypes.FAILED_GET_USER_DETAIL:
+      newState.isLoading = false
+      return newState
+
     default:
       return state
   }

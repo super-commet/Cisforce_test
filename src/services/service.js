@@ -29,3 +29,10 @@ export const getUserListService = (pageNum) => {
     }
   })
 }
+
+export const getUserDetail = (id) => {
+  return commonService({
+    method: 'GET',
+    url: `${ApiUrls.GET_USER_LIST_ENDPOINT}/${id}`
+  })
+}

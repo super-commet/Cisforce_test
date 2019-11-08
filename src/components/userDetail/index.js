@@ -5,6 +5,7 @@ import { Card, Button } from 'antd'
 
 import { SpinnerWrapper } from '../common/spinnerWrapper'
 import history from '../../history'
+import { getUserDetail } from '../../actions/main'
 
 const { Meta } = Card
 
@@ -16,7 +17,9 @@ class UserDetail extends Component {
   }
 
   componentDidMount () {
-    this.props.getUserDetail()
+    const { match } = this.props
+    const selectedUserId = match.params.id
+    this.props.getUserDetail(selectedUserId)
   }
 
   render () {
@@ -24,17 +27,18 @@ class UserDetail extends Component {
     return (
       <SpinnerWrapper isLoading={isLoading}>
         <div className={'user-detail-container'}>
+          <p className={'title'}>User Detail</p>
           <Card
             hoverable={true}
             style={{ width: 240 }}
-            cover={<img src={selectedUser.avatar} alt={''} />}
+            cover={<img src={selectedUser && selectedUser.avatar} alt={''} />}
           >
             <Meta
               title={'User Detail'}
-              description={`${selectedUser.first_name} ${selectedUser.last_name}`}
+              description={`${selectedUser && selectedUser.first_name} ${selectedUser && selectedUser.last_name}`}
             />
           </Card>
-          <div>
+          <div className={'back-button-container'}>
             <Button type={'primary'} onClick={() => history.push('/')}>
               Back
             </Button>
@@ -53,7 +57,11 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    getUserDetail: (id) => {
+      dispatch(getUserDetail(id))
+    }
+  }
 }
 
 export default connect(

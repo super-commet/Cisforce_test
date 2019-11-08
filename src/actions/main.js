@@ -35,3 +35,21 @@ export const onChangePageNum = (pageNum) => {
     payload: pageNum
   }
 }
+
+export const getUserDetail = (id) => {
+  return (dispatch, getState) => {
+    dispatch(apiLoading())
+    return ApiServices.getUserDetail(id)
+      .then(response => {
+        dispatch({
+          type: ActionTypes.SUCCESS_GET_USER_DETAIL,
+          payload: response.data.data
+        })
+      }).catch(error => {
+        dispatch({
+          type: ActionTypes.FAILED_GET_USER_DETAIL,
+          payload: error
+        })
+      })
+  }
+}
