@@ -1,13 +1,6 @@
-# Index Datatable
+# User list Web App
 
-This is Test project to display coupon list.
-
-Built with:
-- React.JS
-- webpack
-- Babel
-- ESLint
-- and more
+The user list web app is a [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application) built using [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org).
 
 ## installation
 
@@ -16,8 +9,21 @@ Built with:
   npm install (or yarn)
 ```
 
-## run
+## how to run app
 ```
   npm run dev (or yarn run dev)
 ```
+
+## Architecture and Design
+
+Tools:
+* Custom configuration(building from scratch)
+* Webpack
+*Redux
+* React.js
+* Redux
+* Redux-thunk
+* Redux-logger
+* SCSS
+* ant design
 
